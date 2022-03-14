@@ -1,24 +1,34 @@
 import java.util.Random;
 
-public class GenerateCredentials {
+public class GenerateCredentials{
 	
-	public string generatePassword() {
-		
-		String ValidPwdChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@£$%^&*();";
-	array[i] = ValidPwdChars.charAt(Random.nextint(validpwdchars.length()));
-	return new string(array[]);
+	Employee emp = new Employee();
+
+	public String generatePassword() {
+
+		String ValidPwdChars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!@#$%&";
+		int len=0;;
+		Random rnd = new Random();
+		StringBuilder sb = new StringBuilder(len);
+		for (int i = 0; i < len; i++)
+			sb.append(ValidPwdChars.charAt(rnd.nextInt(ValidPwdChars.length())));
+		return sb.toString();
 	}
+
+	public String generateEmailId(Employee emp)
 	
-	public String generateEmailId(Employee emp) {
-		
-		return emp.getFName()+emp.getLName()+"@"+emp.getDeptName()+".gl.in";
+	{
+
+		return emp.getFName() + emp.getLName() + "@" + emp.getDeptName() + ".gl.in";
 	}
-	
-	public void showCredentials(Employee emp, String password) {
+
+	public void showCredentials(Employee emp) {
 		
-		System.out.println ("Dear" + emp.getfname() +"your generated credentials are as follows \n Email---->" + generateEmailID(emp) +"\n Password ----> "+ generatePassword())
-		
-		
+		String returnstring;
+		returnstring = "Dear "+ emp.getFName() + "your generated credentials are as follows \n Email---->" + generateEmailId(emp) + "\n Password ----> " + generatePassword();
+
+
+		System.out.println(returnstring);
 	}
 
 }

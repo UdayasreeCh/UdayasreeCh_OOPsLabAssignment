@@ -1,17 +1,27 @@
-
 public class Employee {
-	string FName;
+	String FName;
 	String LName;
 	String DeptName;
-	public string getFName() {
+	
+	public Employee() {};
+	public Employee(String fName, String lName, String deptName) {
+		super();
+		FName = fName;
+		LName = lName;
+		DeptName = deptName;
+	}
+	
+	
+	public String getFName() {
 		return FName;
 	}
+
 	public String getLName() {
 		return LName;
 	}
+
 	public String getDeptName() {
 		return DeptName;
 	}
-	
 
 }
